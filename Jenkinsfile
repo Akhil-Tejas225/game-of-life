@@ -10,14 +10,14 @@ pipeline {
 
     
     tools {
-        maven 'Maven 3.8.7'
-        jdk 'Java_17'
+        maven 'Maven_3.8'
+        jdk 'JDK_8'
     }
     stages {
         stage('VCS') {
             steps {
                 git branch: 'develop',
-                url: 'https://github.com/springpet-clinic/game-of-life.git'
+                url: 'https://github.com/Akhil-Tejas225/game-of-life.git'
             }
         }
         stage('build') {
