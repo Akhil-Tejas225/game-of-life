@@ -34,16 +34,15 @@ pipeline {
     }
     post {
         success {
-            mail subject: "${JOB_NAME}: has completed with success",
-                 body: "${JOB_NAME}: has completed with success",
+            mail subject: "${JOB_NAME}: is successfull",
+                 body: "${JOB_NAME}: is successfull",
                  to: "all@qt.com"
 
         }
         failure {
          
-            mail subject: "${JOB_NAME}: has completed with success",
-            
-                 body: "${JOB_NAME}: has completed with success", 
+            mail subject: "${JOB_NAME}: is successfull",             
+                 body: "${JOB_NAME}: is successfull", 
                  to: "all@qt.com"
 
         }
