@@ -42,6 +42,7 @@ pipeline {
         failure {
          
             mail subject: "${JOB_NAME}: has completed with success",
+             ##this is for testing ##
                  body: "${JOB_NAME}: has completed with success", 
                  to: "all@qt.com"
 
