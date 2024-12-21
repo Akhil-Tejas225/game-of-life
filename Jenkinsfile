@@ -24,7 +24,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh script: 'mvn package'
+                sh script: "mvn ${params.CHOICE}"
             }
         }
         stage('reporting') {
