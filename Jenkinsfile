@@ -7,6 +7,9 @@ pipeline {
     triggers { 
         pollSCM('* * * * *')
     }
+    parameters {
+        choice(name: 'CHOICE', choices: ['package', 'install', 'clean package'], description: 'Pick something')
+    }
 
     
     tools {
