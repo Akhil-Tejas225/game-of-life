@@ -16,8 +16,7 @@ pipeline {
     stages {
         stage('VCS') {
             steps {
-                git branch: 'develop',
-                url: 'https://github.com/Akhil-Tejas225/game-of-life.git'
+                git branch: 'develop', url: 'https://github.com/Akhil-Tejas225/game-of-life.git'
             }
         }
         stage('build') {
@@ -32,4 +31,19 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            mail subject: "${JOB_NAME}: is successfull",
+                 body: "${JOB_NAME}: is successfull",
+                 to: "all@qt.com"
+
+        }
+        failure {
+         
+            mail subject: "${JOB_NAME}: is successfull",             
+                 body: "${JOB_NAME}: is successfull", 
+                 to: "all@qt.com"
+
+        }
 }
+}    
