@@ -16,8 +16,7 @@ pipeline {
     stages {
         stage('VCS') {
             steps {
-                git branch: 'develop',
-                       url: 'https://github.com/Akhil-Tejas225/game-of-life.git'
+                git branch: 'develop', url: 'https://github.com/Akhil-Tejas225/game-of-life.git'
             }
         }
         stage('build') {
