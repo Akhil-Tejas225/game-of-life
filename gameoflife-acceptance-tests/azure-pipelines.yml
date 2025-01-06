@@ -1,0 +1,36 @@
+---
+parameters:
+- name: Command
+  displayName: Docker_command # Human-readable name for the parameter.
+  type: string
+  default: buildAndPush
+  values:
+    - buildAndPush
+    - build
+    - push
+    - login
+    - logout
+    - stop
+trigger:
+  - master
+stages:
+  - stage: build
+    pool: default
+    displayName: build docker image
+    jobs:
+      - job: Dockerbuild
+        steps: 
+          - task: Docker@2
+            inputs: 
+              Dockerfile: '**/Dockerfile'
+              containerRegistry: Mydockerhub
+              repository: akhilgc009/gameoflife
+              command: ${{ parameters.Command }}
+              tags: $(Build.BuildId)
+
+
+
+
+
+
+
