@@ -1,0 +1,33 @@
+---
+parameters:
+- name: Command
+  displayName: Docker_command 
+  type: string
+  default: buildAndPush
+  values:
+    - buildAndPush
+    - build
+    - push
+    - login
+    - logout
+    - stop
+trigger:
+  - master
+resources:
+  repositories:
+    - repository: templates
+      name: templates
+      ref: refs/heads/main
+      type: git
+stages:
+  - template: Docker/DockerTemplate.yml
+    parameters: 
+      -Command: buildAndPush
+
+
+
+
+
+
+
+
