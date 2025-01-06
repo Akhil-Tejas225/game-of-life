@@ -19,6 +19,7 @@ resources:
       name: templates
       ref: refs/heads/main
       type: git
+      endpoint: myazuretemplates
 stages:
   - template: Docker/DockerTemplate.yml
     parameters: 
