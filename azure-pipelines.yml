@@ -21,7 +21,7 @@ resources:
       type: git
       endpoint: myazuretemplates
 stages:
-  - template: Docker/DockerTemplate.yml
+  - template: Docker/DockerTemplates.yml@templates
     parameters: 
       -Command: buildAndPush
 
